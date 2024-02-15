@@ -30,14 +30,14 @@ export async function scrapeAmazonProduct(url: string) {
        
     // Extract the product title
     const title = $('#productTitle').text().trim();
+    
     const currentPrice = extractPrice(
-      $('.priceToPay span.a-price-whole'),
-      $('.a.size.base.a-color-price'),
-      $('.a-button-selected .a-color-base'),
-      $('.a-price.a-text-price')
-    );
-
-    const originalPrice = extractPrice(
+        $('.priceToPay span.a-price-whole'),
+        $('.a.size.base.a-color-price'),
+        $('.a-button-selected .a-color-base'),
+      );
+  
+      const originalPrice = extractPrice(
         $('#priceblock_ourprice'),
         $('.a-price.a-text-price span.a-offscreen'),
         $('#listPrice'),
@@ -73,7 +73,7 @@ export async function scrapeAmazonProduct(url: string) {
         priceHistory: [],
         discountRate: Number(discountRate),
         category: 'category',
-        reviewssCount: 100,
+        reviewsCount: 100,
         star:4.5,
         isOutOfStock: outOfStock,
         description,

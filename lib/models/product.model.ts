@@ -26,4 +26,10 @@ const productSchema = new mongoose.Schema({
     users: [
         {email: {type: String, required: true}}
     ], default: [],
-}, {timestamps: true})
+}, {timestamps: true});
+
+const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
+
+export default Product;
+
+
