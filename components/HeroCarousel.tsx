@@ -5,11 +5,10 @@ import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 
 const heroImages = [
-  { imgUrl: "/assets/images/hero-1.svg", alt: "smartwatch" },
-  { imgUrl: "/assets/images/hero-2.svg", alt: "bag" },
-  { imgUrl: "/assets/images/hero-3.svg", alt: "lamp" },
-  { imgUrl: "/assets/images/hero-4.svg", alt: "air fryer" },
-  { imgUrl: "/assets/images/hero-5.svg", alt: "chair" },
+  { imgUrl: "/assets/images/headphones.jpg", alt: "headphones" },
+  { imgUrl: "/assets/images/camera.jpg", alt: "camera" },
+  { imgUrl: "/assets/images/vans.jpg", alt: "shoes" },
+  { imgUrl: "/assets/images/keyboard.jpg", alt: "keyboard" },
 ];
 
 const HeroCarousel = () => {
@@ -27,8 +26,8 @@ const HeroCarousel = () => {
           <Image
             src={image.imgUrl}
             alt={image.alt}
-            width={484}
-            height={484}
+            width={400}
+            height={400}
             className="object-contain"
             key={image.alt}
           />
