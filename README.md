@@ -1,4 +1,5 @@
 # Price Ninja - Amazon Product Web Scraper
+![image](https://github.com/quaydrionb/price-ninja/assets/99278263/22b8c99d-db8f-49fb-8415-f0e7d663c08d)
 
 ## Purpose
 Price Ninja is a versatile web scraping tool designed to extract valuable data from Amazon product pages. Its primary aim is to provide users with comprehensive information about products listed on Amazon, including pricing, descriptions, ratings, and reviews. This data can be used for various purposes such as market research, price monitoring, and making informed purchasing decisions.
