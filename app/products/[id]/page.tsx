@@ -42,42 +42,10 @@ const ProductDetails = async ({ params: { id } }: Props) => {
               <Link
                 href={product.url}
                 target="_blank"
-                className="text=base text-black opacity-50"
+                className="text=base text-black opacity-50 text-center border-2 border-emerald-50"
               >
                 Visit Product Page
               </Link>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="product-hearts">
-                <Image
-                  src="/assets/icons/red-heart.svg"
-                  alt="heart"
-                  width={20}
-                  height={20}
-                />
-                <p className="text-base font-semibold text-[#D46F77]">
-                  {product.reviewsCount}
-                </p>
-              </div>
-
-              <div className="p-2 bg-white-200 rounded-10">
-                <Image
-                  src="/assets/icons/bookmark.svg"
-                  alt="bookmark"
-                  width={20}
-                  height={20}
-                />
-              </div>
-
-              <div className="p-2 bg-white-200 rounded-10">
-                <Image
-                  src="/assets/icons/share.svg"
-                  alt="share"
-                  width={20}
-                  height={20}
-                />
-              </div>
             </div>
           </div>
           <div className="product-info">
@@ -175,7 +143,11 @@ const ProductDetails = async ({ params: { id } }: Props) => {
             height={22}
           />
 
-          <Link href="/" className="text-base text-white">
+          <Link
+            href={product.url}
+            target="_blank"
+            className="text-base text-white"
+          >
             Buy Now
           </Link>
         </button>

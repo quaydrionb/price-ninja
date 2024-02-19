@@ -13,7 +13,7 @@ const heroImages = [
 
 const HeroCarousel = () => {
   return (
-    <div className="hero-carousel">
+    <div className="sm:hero-carousel">
       <Carousel
         showThumbs={false}
         autoPlay
@@ -27,8 +27,8 @@ const HeroCarousel = () => {
             src={image.imgUrl}
             alt={image.alt}
             width={400}
-            height={400}
-            className="object-contain"
+            height={600}
+            className="object-contain rounded-[30px] w-auto"
             key={image.alt}
           />
         ))}

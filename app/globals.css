@@ -37,7 +37,7 @@
   }
 
   .hero-carousel {
-    @apply relative sm:px-10 py-3 sm:pt-20 pb-2 max-w-[600px] h-[500px] w-full bg-[#F2F4F7] rounded-[30px] sm:mx-auto;
+    @apply relative sm:px-10 sm:pt-10  max-w-[500px] h-[360px] w-full bg-[rgb(62,146,66)] rounded-[30px] sm:mx-auto;
   }
 
   .carousel {

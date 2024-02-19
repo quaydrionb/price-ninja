@@ -50,7 +50,8 @@ export async function scrapeAmazonProduct(url: string) {
       $('#imgBlkFront').attr('data-a-dynamic-image') || 
       $('#landingImage').attr('data-a-dynamic-image') ||
       '{}';
-  
+
+
   
       const outOfStock = $('#availanility span').text().trim().toLowerCase() === 'currently unavailable';
 
@@ -66,7 +67,7 @@ export async function scrapeAmazonProduct(url: string) {
        // Construct data object with scraped information
        const data = {
         url,
-        currency: currency|| '$',
+        currency: currency || '$',
         image:imageUrls[0],
         title,
         currentPrice: Number(currentPrice) || Number(originalPrice),
@@ -74,7 +75,7 @@ export async function scrapeAmazonProduct(url: string) {
         priceHistory: [],
         discountRate: Number(discountRate),
         category: 'category',
-        reviewsCount: 100,
+        reviewsCount: 1,
         stars:4.5,
         isOutOfStock: outOfStock,
         description,
