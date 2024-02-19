@@ -27,7 +27,7 @@ const HeroCarousel = () => {
             src={image.imgUrl}
             alt={image.alt}
             width={400}
-            height={600}
+            height={260}
             className="object-contain rounded-[30px] w-auto"
             key={image.alt}
           />
