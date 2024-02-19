@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
     "mongoose": "^8.1.2",
