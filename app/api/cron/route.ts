@@ -8,7 +8,7 @@ import { generateEmailBody, sendEmail } from "@/lib/nodemailer";
 
 export const maxDuration = 10; 
 export const dynamic = "force-dynamic";
-export const revalidate = 10;
+export const revalidate = 0;
 
 export async function GET(request: Request) {
   try {
