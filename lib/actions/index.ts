@@ -72,7 +72,7 @@ export async function getProductById(productId:string ) {
   }
 }
 
-export async function gettAllProducts() {
+export async function getAllProducts() {
   try {
     connectToDB();
     

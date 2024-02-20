@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Price Ninja",
   description:
-    "Track product prices effortlessly aand save money on your online shopping.",
+    "Track product prices effortlessly and save money on your online shopping.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={spaceGrotesk.className}>
         <main className="max-w-20xl">
           <Navbar />
           {children}

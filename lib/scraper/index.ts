@@ -53,7 +53,7 @@ export async function scrapeAmazonProduct(url: string) {
 
 
   
-      const outOfStock = $('#availanility span').text().trim().toLowerCase() === 'currently unavailable';
+      const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
 
       const imageUrls = Object.keys(JSON.parse(images));
 

@@ -1,11 +1,11 @@
 import HeroCarousel from "@/components/HeroCarousel";
 import SearchBar from "@/components/SearchBar";
 import Image from "next/image";
-import { gettAllProducts } from "@/lib/actions";
+import { getAllProducts } from "@/lib/actions";
 import ProductCard from "@/components/ProductCard";
 
 const Home = async () => {
-  const allProducts = await gettAllProducts();
+  const allProducts = await getAllProducts();
 
   return (
     <>
