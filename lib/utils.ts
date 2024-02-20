@@ -118,3 +118,16 @@ export const formatNumber = (num: number = 0) => {
     maximumFractionDigits: 0,
   });
 };
+
+export function extractReview(...elements: any) {
+  for (const element of elements) {
+    const reviewText = element.text().trim();
+
+    if (reviewText) {
+      return reviewText; 
+    }
+  }
+  
+  // If no review text is found in any of the elements, return null or an appropriate default value
+  return null; // or return "No review text found" or any other default value
+}
