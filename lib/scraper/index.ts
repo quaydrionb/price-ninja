@@ -26,25 +26,30 @@ export async function scrapeAmazonProduct(url: string) {
         //Fetch the product page
         const response = await axios.get(url, options );
         const $ = cheerio.load(response.data);
+        const result = {};
 
        
     // Extract the product title
     const title = $('#productTitle').text().trim();
     
     const currentPrice = extractPrice(
-        $('span[data-a-color=price] span.a-offscreen').first(),
-        $('.priceToPay span.a-price-whole').first(),
+        $('.priceToPay'),
         $('.a.size.base.a-color-price'),
         $('.a-button-selected .a-color-base'),
+        $('span.a-whole-price'),
+        $('span.a-offscreen'),
+        $('span[aria-hidden="true"]'),
       );
   
       const originalPrice = extractPrice(
+        $('span.a-text-price span[data-a-strike="true"]'),
         $('#priceblock_ourprice'),
-        $('.a-price.a-text-price span.a-offscreen').first(),
+        $('.a-price.a-text-price span.a-offscreen'),
         $('#listPrice'),
         $('#priceblock_dealprice'),
-        $('.a-size-base.a-color-price'),
-    
+        $('.a-size-base.a-color-price')
+
+
       );
 
       const images = 
