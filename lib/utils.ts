@@ -133,18 +133,3 @@ export function extractReviewRating(html: string): number {
   }
 }
 
-
-export function extractStarRating(html: string): number {
-  // Define a regular expression to match the star rating
-  const regex = /<span\s+class="a-size-base\s+a-color-base">(\d+(\.\d+)?)<\/span>/;
-
-  // Match the regular expression against the provided HTML
-  const match = html.match(regex);
-
-  // If there's a match, extract the star rating and parse it as a float
-  if (match && match.length > 1) {
-      return parseFloat(match[1]) || 0; // Return 0 if parseFloat returns NaN
-  } else {
-      return 0; // Return 0 if no star rating found
-  }
-}
