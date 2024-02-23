@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { extractCurrency, extractDescription, extractPrice, extractReview, formatNumber } from '../utils';
+import { extractCurrency, extractDescription, extractPrice, extractReviewRating, formatNumber } from '../utils';
 
 
 export async function scrapeAmazonProduct(url: string) {
@@ -44,9 +44,11 @@ export async function scrapeAmazonProduct(url: string) {
         $('.a-price.a-text-price .a-offscreen')
     );
 
+    const review = extractReviewRating(
+        $('#acrCustomerReviewText').text()
+    );
 
-  
-
+ 
       const images = 
       $('#imgBlkFront').attr('data-a-dynamic-image') || 
       $('#landingImage').attr('data-a-dynamic-image') ||
@@ -76,7 +78,7 @@ export async function scrapeAmazonProduct(url: string) {
         priceHistory: [],
         discountRate: Number(discountRate),
         category: 'category',
-        reviewsCount: 100,
+        reviewsCount: review,
         stars:4.5,
         isOutOfStock: outOfStock,
         description,

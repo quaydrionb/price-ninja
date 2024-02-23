@@ -118,16 +118,33 @@ export const formatNumber = (num: number = 0) => {
     maximumFractionDigits: 0,
   });
 };
+export function extractReviewRating(html: string): number {
+  // Extract the text content from the provided HTML
+  const textContent = html.replace(/<\/?[^>]+(>|$)/g, ""); // Remove any HTML tags
 
-export function extractReview(...elements: any) {
-  for (const element of elements) {
-    const reviewText = element.text().trim();
+  // Extract only the numeric part from the text content
+  const numericPart = textContent.match(/\d{1,3}(?:,\d{3})*(?:\.\d+)?|\.\d+/);
 
-    if (reviewText) {
-      return reviewText; 
-    }
+  // If there's a numeric part, parse it as an integer and return
+  if (numericPart) {
+      return parseFloat(numericPart[0].replace(/,/g, '')) || 0; // Return 0 if parseFloat returns NaN
+  } else {
+      return 0; // Return 0 if no numeric part found
   }
-  
-  // If no review text is found in any of the elements, return null or an appropriate default value
-  return null; // or return "No review text found" or any other default value
+}
+
+
+export function extractStarRating(html: string): number {
+  // Define a regular expression to match the star rating
+  const regex = /<span\s+class="a-size-base\s+a-color-base">(\d+(\.\d+)?)<\/span>/;
+
+  // Match the regular expression against the provided HTML
+  const match = html.match(regex);
+
+  // If there's a match, extract the star rating and parse it as a float
+  if (match && match.length > 1) {
+      return parseFloat(match[1]) || 0; // Return 0 if parseFloat returns NaN
+  } else {
+      return 0; // Return 0 if no star rating found
+  }
 }
