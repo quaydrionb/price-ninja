@@ -33,24 +33,22 @@ export async function scrapeAmazonProduct(url: string) {
     const title = $('#productTitle').text().trim();
     
     const currentPrice = extractPrice(
-        $('.priceToPay'),
-        $('.a.size.base.a-color-price'),
-        $('.a-button-selected .a-color-base'),
-        $('span.a-whole-price'),
-        $('span.a-offscreen'),
-        $('span[aria-hidden="true"]'),
+        $('.priceToPay span.a-price-whole'),
+        $('.a-price'),
+        $('span[data-a-color=price] span.a-offscreen'),
+      $('.a.size.base.a-color-price'),
+      $('.a-button-selected .a-color-base'),
+
+        
       );
   
       const originalPrice = extractPrice(
-        $('span.a-text-price span[data-a-strike="true"]'),
-        $('#priceblock_ourprice'),
-        $('.a-price.a-text-price span.a-offscreen'),
-        $('#listPrice'),
-        $('#priceblock_dealprice'),
-        $('.a-size-base.a-color-price')
+        $('.a-text-price [data-a-color="secondary"]'),
+        $('span[data-a-strike=true] span.a-offscreen')
+    );
 
 
-      );
+  
 
       const images = 
       $('#imgBlkFront').attr('data-a-dynamic-image') || 
