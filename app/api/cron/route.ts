@@ -46,7 +46,8 @@ export async function GET(request: Request) {
           {
             url: product.url,
           },
-          product
+          product,
+          {upsert: true, new: true}
         );
 
         // ======================== 2 CHECK EACH PRODUCT'S STATUS & SEND EMAIL ACCORDINGLY
