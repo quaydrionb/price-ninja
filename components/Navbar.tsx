@@ -2,12 +2,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-const navIcons = [
-  { src: "/assets/icons/search.svg", alt: "search" },
-  { src: "/assets/icons/black-heart.svg", alt: "heart" },
-  { src: "/assets/icons/user.svg", alt: "user" },
-];
-
 const Navbar = () => {
   return (
     <header className="w-full">
@@ -24,6 +18,19 @@ const Navbar = () => {
             Price<span className="text-primary-green">Ninja</span>
           </p>
         </Link>
+        <a
+          href="https://github.com/quaydrionb/price-ninja"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-container bg-white"
+        >
+          <Image
+            src="/assets/icons/github.svg"
+            alt="GitHub"
+            width={30}
+            height={30}
+          />
+        </a>
       </nav>
     </header>
   );
